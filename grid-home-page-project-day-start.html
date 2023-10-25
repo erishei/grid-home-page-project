@@ -11,22 +11,90 @@
         }
 
         body {
+            min-height: 100vh;
+            margin: 0;
 
         }
 
         .container {
             display: grid;
+            grid-template-columns: 1fr 150px;
+            grid-template-rows: auto auto 1fr auto;
+            grid-template-areas:
+            "header header"
+            "nav sidebar"
+            "main sidebar"
+            "footer footer";
         }
+
+        header {
+            grid-area: header;
+            font-size: 2rem;
+            background-color: #BADA55;
+            text-align: center;
+            padding: 1rem;
+            text-transform: capitalize;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: #BADA55;
+            border-top: 1px solid #024;
+
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* gap: 1rem; --replaced with padding in li instead */
+            font-size: 1.2rem;
+            color: #069;
+            padding: 0;
+        }
+
+        nav ul li {
+            padding: .5rem;
+        }
+
+        main {
+            grid-area: main;
+            font-size: 1.5rem;
+        }
+
+        aside {
+            grid-area: sidebar;
+            background-color: #b00b;
+            color: #FFF;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #c0ffee;
+            color: #069;
+            text-align: center;
+            padding: .5rem;
+            font-size: 1.2rem;
+        }
+
+        header, nav, footer {
+            color: #069
+        }
+
 
     </style>
 </head>
 
-<body>
-<header>
+<body class="container">
+<header class="header">
     title
 </header>
 
-<nav>
+<nav class="nav">
     <ul>
         <li>Home</li>
         <li>About</li>
@@ -34,18 +102,22 @@
     </ul>
 </nav>
 
-<main>
+<main class="content">
     <article>
         <h2>Header</h2>
         <p>Cur orgia messis?Green people yell with assimilat
-            ion at the photonic solar sphere!Habitios ridetis in cirpi!</p>
+            ion at the photonic solar sphere!Habitios ridetis in cirpi!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eligendi eum iste officiis voluptatibus. Consequuntur deserunt, eos, esse est excepturi laudantium minima neque odio possimus quibusdam quos, sit soluta temporibus.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, deleniti explicabo itaque magni nemo porro repudiandae tenetur. Assumenda beatae debitis dolorem exercitationem fuga illo iste quisquam totam ut. A, quis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam consequuntur debitis earum exercitationem id iure magni maxime nam, nisi numquam odio quasi quisquam quo repellendus sapiente similique sint suscipit?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad, adipisci aliquam ea illum magni maxime molestiae nisi obcaecati omnis provident quae, quam quia quibusdam, repellat repellendus soluta totam ut?</p>
     </article>
 </main>
 
-<aside>
+<aside class="sidebar">
     Jolly rogers grow on hunger at fort charles!
 </aside>
-<footer>
+<footer class="footer">
     copyrights
 </footer>
 </body>
